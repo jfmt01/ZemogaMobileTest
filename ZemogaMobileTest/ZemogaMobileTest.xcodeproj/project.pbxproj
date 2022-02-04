@@ -101,7 +101,6 @@
 				14167E50673DA9011B15C9AF /* Pods-ZemogaMobileTestTests.debug.xcconfig */,
 				1E12A13206CF1EC5DF656730 /* Pods-ZemogaMobileTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +112,60 @@
 				89E8BE0072D9379C904DC8C3 /* Pods_ZemogaMobileTestTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED5A1F7227ACB36300A2A4AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED5A1F7327ACB37500A2A4AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED5A1F7427ACB38100A2A4AA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ED5A1F7627ACB74600A2A4AA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A1F7727ACB75000A2A4AA /* DataBase */,
+				ED5A1F7827ACB75D00A2A4AA /* Services */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		ED5A1F7727ACB75000A2A4AA /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		ED5A1F7827ACB75D00A2A4AA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED5A1F7927ACB7FC00A2A4AA /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6D1E827ACA94F00DC9818 /* Main.storyboard */,
+				EDC6D1ED27ACA95100DC9818 /* LaunchScreen.storyboard */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		EDC6D1D627ACA94F00DC9818 = {
@@ -140,12 +193,14 @@
 		EDC6D1E127ACA94F00DC9818 /* ZemogaMobileTest */ = {
 			isa = PBXGroup;
 			children = (
+				ED5A1F7627ACB74600A2A4AA /* Config */,
+				ED5A1F7227ACB36300A2A4AA /* Models */,
+				ED5A1F7327ACB37500A2A4AA /* Views */,
+				ED5A1F7427ACB38100A2A4AA /* ViewModels */,
+				ED5A1F7927ACB7FC00A2A4AA /* Interfaces */,
 				EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */,
 				EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */,
-				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
-				EDC6D1E827ACA94F00DC9818 /* Main.storyboard */,
 				EDC6D1EB27ACA95100DC9818 /* Assets.xcassets */,
-				EDC6D1ED27ACA95100DC9818 /* LaunchScreen.storyboard */,
 				EDC6D1F027ACA95100DC9818 /* Info.plist */,
 			);
 			path = ZemogaMobileTest;
