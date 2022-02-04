@@ -10,21 +10,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Post-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PostsListViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-pW-Vr2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <rect key="frame" x="20" y="98" width="374" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-aL-Ixl">
+                                <rect key="frame" x="0.0" y="139" width="414" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E5-2F-s3l">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <color key="backgroundColor" name="DeleteButtonColor"/>
@@ -37,17 +41,12 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-aL-Ixl">
-                                <rect key="frame" x="0.0" y="119" width="414" height="693"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uLt-pW-Vr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9n4-hg-vP5"/>
-                            <constraint firstItem="uLt-pW-Vr2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C4w-Mb-hpe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLt-pW-Vr2" secondAttribute="trailing" id="Cjh-On-YcS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLt-pW-Vr2" secondAttribute="trailing" constant="20" id="Cjh-On-YcS"/>
                             <constraint firstItem="3E5-2F-s3l" firstAttribute="top" secondItem="2e2-aL-Ixl" secondAttribute="bottom" id="HGz-zx-Jeh"/>
                             <constraint firstItem="2e2-aL-Ixl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KQi-Z6-tDR"/>
                             <constraint firstItem="2e2-aL-Ixl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pfs-cb-OFj"/>
@@ -55,21 +54,27 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3E5-2F-s3l" secondAttribute="bottom" id="ZPm-Uj-rLK"/>
                             <constraint firstItem="3E5-2F-s3l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ad5-fO-eR6"/>
                             <constraint firstItem="3E5-2F-s3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lLe-AG-rgs"/>
-                            <constraint firstItem="uLt-pW-Vr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m6S-gq-Sjk"/>
+                            <constraint firstItem="uLt-pW-Vr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m6S-gq-Sjk"/>
+                            <constraint firstItem="uLt-pW-Vr2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pGe-LO-Nbm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3E5-2F-s3l" secondAttribute="trailing" id="rve-Ca-cWf"/>
-                            <constraint firstItem="2e2-aL-Ixl" firstAttribute="top" secondItem="uLt-pW-Vr2" secondAttribute="bottom" id="tX9-C3-eho"/>
+                            <constraint firstItem="2e2-aL-Ixl" firstAttribute="top" secondItem="uLt-pW-Vr2" secondAttribute="bottom" constant="10" id="sPv-Oq-oiQ"/>
+                            <constraint firstItem="3E5-2F-s3l" firstAttribute="top" secondItem="2e2-aL-Ixl" secondAttribute="bottom" constant="2" id="uRh-7W-jII"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bry-2u-QDa"/>
+                    <navigationItem key="navigationItem" title="Post" id="bry-2u-QDa"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="uLt-pW-Vr2" id="HMD-vr-TqT"/>
+                        <outlet property="tableView" destination="2e2-aL-Ixl" id="3nq-nr-hIp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896.79999999999995" y="40.929535232383813"/>
+            <point key="canvasLocation" x="895.6521739130435" y="40.848214285714285"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="De0-9b-Rcl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gGs-FU-kQT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gGs-FU-kQT" customClass="NavigationViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uxa-Ca-B9p">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

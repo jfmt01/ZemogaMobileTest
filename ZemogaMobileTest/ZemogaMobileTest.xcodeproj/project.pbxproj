@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6B8B1A7D1A20F81364B18D18 /* Pods_ZemogaMobileTest_ZemogaMobileTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687BB4AE5E840CF817503CC /* Pods_ZemogaMobileTest_ZemogaMobileTestUITests.framework */; };
 		D08F2BE8EC8D844E4F9F2C92 /* Pods_ZemogaMobileTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E8BE0072D9379C904DC8C3 /* Pods_ZemogaMobileTestTests.framework */; };
+		ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */; };
+		ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */; };
+		ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */; };
 		EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */; };
 		EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */; };
 		EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E627ACA94F00DC9818 /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 		89E8BE0072D9379C904DC8C3 /* Pods_ZemogaMobileTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZemogaMobileTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B407363C218EF0F37442F77E /* Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig"; path = "Target Support Files/Pods-ZemogaMobileTest-ZemogaMobileTestUITests/Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD8CE3D272FAF11F32DF6804 /* Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZemogaMobileTest-ZemogaMobileTestUITests/Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
+		ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		EDC6D1DF27ACA94F00DC9818 /* ZemogaMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZemogaMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
+				ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */,
+				ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +176,23 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		ED5A1F7E27AD175600A2A4AA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A1F7F27AD176B00A2A4AA /* Extensions */,
+				EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ED5A1F7F27AD176B00A2A4AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EDC6D1D627ACA94F00DC9818 = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +223,7 @@
 				ED5A1F7327ACB37500A2A4AA /* Views */,
 				ED5A1F7427ACB38100A2A4AA /* ViewModels */,
 				ED5A1F7927ACB7FC00A2A4AA /* Interfaces */,
-				EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */,
+				ED5A1F7E27AD175600A2A4AA /* Utilities */,
 				EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */,
 				EDC6D1EB27ACA95100DC9818 /* Assets.xcassets */,
 				EDC6D1F027ACA95100DC9818 /* Info.plist */,
@@ -462,7 +487,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */,
+				ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */,
 				EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */,
+				ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */,
 				EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */,
 				EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */,
 			);
