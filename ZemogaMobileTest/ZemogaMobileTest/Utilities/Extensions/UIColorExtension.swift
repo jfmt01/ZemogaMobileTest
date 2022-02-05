@@ -13,6 +13,14 @@ public extension UIColor {
         UIColor(red: 8/255, green: 175/255, blue: 15/255, alpha: 1.0)
     }
     
+    static func postsListGrayLabel() -> UIColor{
+        UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
+    }
+    
+    static func favoriteIconColor() -> UIColor{
+        UIColor(red: 248/255, green: 231/255, blue: 29/255, alpha: 1.0)
+    }
+    
     static func deleteButtonColor() -> UIColor{
         UIColor(red: 208/255, green: 2/255, blue: 26/255, alpha: 1.0)
     }

@@ -12,6 +12,8 @@
 		ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */; };
 		ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */; };
 		ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */; };
+		ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */; };
+		ED5A1F9927AD6E1B00A2A4AA /* PostsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */; };
 		EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */; };
 		EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */; };
 		EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E627ACA94F00DC9818 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
 		ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListTableViewCell.swift; sourceTree = "<group>"; };
+		ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsListTableViewCell.xib; sourceTree = "<group>"; };
 		EDC6D1DF27ACA94F00DC9818 /* ZemogaMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZemogaMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		ED5A1F7327ACB37500A2A4AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED5A1F8627AD434700A2A4AA /* Cells */,
 				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
 				ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */,
 				ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */,
@@ -191,6 +196,23 @@
 				ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED5A1F8627AD434700A2A4AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A1F9527AD6DFA00A2A4AA /* PostsList */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ED5A1F9527AD6DFA00A2A4AA /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */,
+				ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */,
+			);
+			path = PostsList;
 			sourceTree = "<group>";
 		};
 		EDC6D1D627ACA94F00DC9818 = {
@@ -359,6 +381,7 @@
 			files = (
 				EDC6D1EF27ACA95100DC9818 /* LaunchScreen.storyboard in Resources */,
 				EDC6D1EC27ACA95100DC9818 /* Assets.xcassets in Resources */,
+				ED5A1F9927AD6E1B00A2A4AA /* PostsListTableViewCell.xib in Resources */,
 				EDC6D1EA27ACA94F00DC9818 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */,
+				ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */,
 				ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */,
 				EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */,
 				ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */,
@@ -672,7 +696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 69J8NQYZZ5;
+				DEVELOPMENT_TEAM = Y9LG5WXWX8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZemogaMobileTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -702,7 +726,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 69J8NQYZZ5;
+				DEVELOPMENT_TEAM = Y9LG5WXWX8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZemogaMobileTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

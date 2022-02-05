@@ -13,12 +13,14 @@ class PostsListViewController: UIViewController {
     @IBOutlet private var segmentedControl: UISegmentedControl!
     @IBOutlet private var tableView: UITableView!
     
-    private let refreshControl = UIRefreshControl()
+    public let refreshControl = UIRefreshControl()
     
+    let stopRefresh = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
+        CreateRefreshControl()
         configSegmentedControlAppearance()
         // Do any additional setup after loading the view.
     }
@@ -27,6 +29,7 @@ class PostsListViewController: UIViewController {
   
     // MARK: - Private Functions
     
+    //Segmented control appeareance Function
     private func configSegmentedControlAppearance(){
         //Config the segmented control border appeareance
         segmentedControl.selectedSegmentTintColor = UIColor.mainGreenColor()
@@ -42,7 +45,16 @@ class PostsListViewController: UIViewController {
         
     }
     
+    //Refresh control to reload the table view data
+    public func CreateRefreshControl(){
+        tableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor.mainGreenColor()
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Posts")
+    }
+  
+    
 
+    
  
 
 }
