@@ -24,6 +24,12 @@ class PostsListViewController: UIViewController {
         configSegmentedControlAppearance()
         // Do any additional setup after loading the view.
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        configBackBtnNavBar()
+    }
+ 
+    
     
 
   
@@ -50,6 +56,12 @@ class PostsListViewController: UIViewController {
         tableView.refreshControl = refreshControl
         refreshControl.tintColor = UIColor.mainGreenColor()
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Posts")
+    }
+    
+    func configBackBtnNavBar(){
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem.appearance()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
   
     

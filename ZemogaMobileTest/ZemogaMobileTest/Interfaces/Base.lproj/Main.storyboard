@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gGs-FU-kQT">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -10,58 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Post-->
+        <!--Posts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PostsListViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-pW-Vr2">
-                                <rect key="frame" x="20" y="98" width="374" height="32"/>
+                                <rect key="frame" x="20" y="54" width="335" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-aL-Ixl">
-                                <rect key="frame" x="0.0" y="139" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="520"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E5-2F-s3l">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" name="DeleteButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0ea-DA-6de"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Delete All">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Delete All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uLt-pW-Vr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9n4-hg-vP5"/>
+                            <constraint firstItem="3E5-2F-s3l" firstAttribute="top" secondItem="2e2-aL-Ixl" secondAttribute="bottom" constant="2" id="AZg-fi-w3N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLt-pW-Vr2" secondAttribute="trailing" constant="20" id="Cjh-On-YcS"/>
-                            <constraint firstItem="3E5-2F-s3l" firstAttribute="top" secondItem="2e2-aL-Ixl" secondAttribute="bottom" id="HGz-zx-Jeh"/>
                             <constraint firstItem="2e2-aL-Ixl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KQi-Z6-tDR"/>
                             <constraint firstItem="2e2-aL-Ixl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pfs-cb-OFj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2e2-aL-Ixl" secondAttribute="trailing" id="WrR-Sz-jZk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3E5-2F-s3l" secondAttribute="bottom" id="ZPm-Uj-rLK"/>
-                            <constraint firstItem="3E5-2F-s3l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ad5-fO-eR6"/>
                             <constraint firstItem="3E5-2F-s3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lLe-AG-rgs"/>
                             <constraint firstItem="uLt-pW-Vr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m6S-gq-Sjk"/>
                             <constraint firstItem="uLt-pW-Vr2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pGe-LO-Nbm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3E5-2F-s3l" secondAttribute="trailing" id="rve-Ca-cWf"/>
                             <constraint firstItem="2e2-aL-Ixl" firstAttribute="top" secondItem="uLt-pW-Vr2" secondAttribute="bottom" constant="10" id="sPv-Oq-oiQ"/>
-                            <constraint firstItem="3E5-2F-s3l" firstAttribute="top" secondItem="2e2-aL-Ixl" secondAttribute="bottom" constant="2" id="uRh-7W-jII"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="bry-2u-QDa"/>
+                    <navigationItem key="navigationItem" title="Posts" id="bry-2u-QDa"/>
                     <connections>
                         <outlet property="segmentedControl" destination="uLt-pW-Vr2" id="HMD-vr-TqT"/>
                         <outlet property="tableView" destination="2e2-aL-Ixl" id="3nq-nr-hIp"/>
@@ -71,13 +68,126 @@
             </objects>
             <point key="canvasLocation" x="895.6521739130435" y="40.848214285714285"/>
         </scene>
+        <!--Post-->
+        <scene sceneID="qJb-lb-Aia">
+            <objects>
+                <viewController id="1I4-c4-0hX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OhZ-ue-rhB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="USy-D2-vrH">
+                                <rect key="frame" x="20" y="10" width="335" height="245"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPk-G2-Wl4">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-FW-57t">
+                                        <rect key="frame" x="0.0" y="32.5" width="335" height="93.5"/>
+                                        <string key="text">Description label The Beatles were an English rock band formed in Liverpool in 1960. With a line-up comprising John Lennon, Paul McCartney, George Harrison and Ringo Starr, they are regarded as the most influential band of all time[1] and were integral to the development of 1960s counterculture and popular music's recognition as an art form.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A9-fA-h5I">
+                                        <rect key="frame" x="0.0" y="138" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kg3-yC-mZF">
+                                        <rect key="frame" x="0.0" y="170.5" width="335" height="74.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUp-eg-Ae5">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haH-4x-ZNc">
+                                                <rect key="frame" x="0.0" y="19.5" width="335" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="081-kc-BUl">
+                                                <rect key="frame" x="0.0" y="40.5" width="335" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-2V-mKg">
+                                                <rect key="frame" x="0.0" y="60" width="335" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0J-IJ-nCn">
+                                <rect key="frame" x="0.0" y="275" width="375" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Y6-Rl-cD7">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Qy7-ye-JEp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3Y6-Rl-cD7" secondAttribute="bottom" id="FP2-rU-Eg5"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Y6-Rl-cD7" secondAttribute="trailing" constant="20" id="GeZ-bH-xbE"/>
+                                    <constraint firstItem="3Y6-Rl-cD7" firstAttribute="leading" secondItem="a0J-IJ-nCn" secondAttribute="leading" constant="20" id="XYW-HP-xc3"/>
+                                    <constraint firstItem="3Y6-Rl-cD7" firstAttribute="centerY" secondItem="a0J-IJ-nCn" secondAttribute="centerY" id="udH-Tg-BDD"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-iK-fGq">
+                                <rect key="frame" x="0.0" y="310" width="375" height="357"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Toa-wo-4FW"/>
+                        <color key="backgroundColor" name="grayBackground"/>
+                        <constraints>
+                            <constraint firstItem="USy-D2-vrH" firstAttribute="top" secondItem="Toa-wo-4FW" secondAttribute="top" constant="10" id="2qE-UH-8hI"/>
+                            <constraint firstItem="H3V-iK-fGq" firstAttribute="top" secondItem="a0J-IJ-nCn" secondAttribute="bottom" id="8VJ-of-r4a"/>
+                            <constraint firstItem="H3V-iK-fGq" firstAttribute="bottom" secondItem="Toa-wo-4FW" secondAttribute="bottom" id="DDW-R4-BTU"/>
+                            <constraint firstItem="USy-D2-vrH" firstAttribute="leading" secondItem="Toa-wo-4FW" secondAttribute="leading" constant="20" id="Ol7-WV-HgB"/>
+                            <constraint firstItem="USy-D2-vrH" firstAttribute="centerX" secondItem="OhZ-ue-rhB" secondAttribute="centerX" id="VvN-vl-62J"/>
+                            <constraint firstItem="a0J-IJ-nCn" firstAttribute="leading" secondItem="Toa-wo-4FW" secondAttribute="leading" id="Xli-1s-ali"/>
+                            <constraint firstItem="a0J-IJ-nCn" firstAttribute="trailing" secondItem="Toa-wo-4FW" secondAttribute="trailing" id="bO0-7N-aiw"/>
+                            <constraint firstItem="H3V-iK-fGq" firstAttribute="leading" secondItem="Toa-wo-4FW" secondAttribute="leading" id="dlY-a0-ZXt"/>
+                            <constraint firstItem="Toa-wo-4FW" firstAttribute="trailing" secondItem="USy-D2-vrH" secondAttribute="trailing" constant="20" id="hNv-OY-dlH"/>
+                            <constraint firstItem="H3V-iK-fGq" firstAttribute="trailing" secondItem="Toa-wo-4FW" secondAttribute="trailing" id="laT-Fw-R0O"/>
+                            <constraint firstItem="a0J-IJ-nCn" firstAttribute="top" secondItem="USy-D2-vrH" secondAttribute="bottom" constant="20" id="ubN-cn-0is"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="dPp-96-uEH">
+                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="tTh-4P-kx4" userLabel="Favorite Icon">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYY-4h-Rfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918.840579710145" y="46.875"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="De0-9b-Rcl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gGs-FU-kQT" customClass="NavigationViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uxa-Ca-B9p">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -91,11 +201,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="DeleteButtonColor">
             <color red="0.81568627450980391" green="0.0039215686274509803" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="grayBackground">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
