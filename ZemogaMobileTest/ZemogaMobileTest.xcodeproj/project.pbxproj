@@ -14,7 +14,10 @@
 		ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */; };
 		ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */; };
 		ED5A1F9927AD6E1B00A2A4AA /* PostsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */; };
-		ED70B7C027AF238200388C54 /* PostDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED70B7BF27AF238200388C54 /* PostDescriptionViewController.swift */; };
+		ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */; };
+		ED9411FE27AF5ED7005971DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FD27AF5ED7005971DA /* Post.swift */; };
+		ED94120027AF6016005971DA /* PostInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FF27AF6016005971DA /* PostInformation.swift */; };
+		ED94120227AF6675005971DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120127AF6675005971DA /* User.swift */; };
 		EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */; };
 		EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */; };
 		EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E627ACA94F00DC9818 /* ViewController.swift */; };
@@ -59,7 +62,10 @@
 		ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListTableViewCell.swift; sourceTree = "<group>"; };
 		ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsListTableViewCell.xib; sourceTree = "<group>"; };
-		ED70B7BF27AF238200388C54 /* PostDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescriptionViewController.swift; sourceTree = "<group>"; };
+		ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformationViewController.swift; sourceTree = "<group>"; };
+		ED9411FD27AF5ED7005971DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		ED9411FF27AF6016005971DA /* PostInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformation.swift; sourceTree = "<group>"; };
+		ED94120127AF6675005971DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EDC6D1DF27ACA94F00DC9818 /* ZemogaMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZemogaMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 		ED5A1F7227ACB36300A2A4AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED9411FD27AF5ED7005971DA /* Post.swift */,
+				ED9411FF27AF6016005971DA /* PostInformation.swift */,
+				ED94120127AF6675005971DA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,7 +149,7 @@
 				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
 				ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */,
 				ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */,
-				ED70B7BF27AF238200388C54 /* PostDescriptionViewController.swift */,
+				ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,10 +526,13 @@
 				ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */,
 				ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */,
 				EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */,
+				ED94120027AF6016005971DA /* PostInformation.swift in Sources */,
 				ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */,
 				EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */,
+				ED9411FE27AF5ED7005971DA /* Post.swift in Sources */,
 				EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */,
-				ED70B7C027AF238200388C54 /* PostDescriptionViewController.swift in Sources */,
+				ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */,
+				ED94120227AF6675005971DA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

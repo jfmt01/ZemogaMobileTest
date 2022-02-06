@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostDescriptionViewController: UIViewController {
+class PostInformationViewController: UIViewController {
     //Mark : Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +16,6 @@ class PostDescriptionViewController: UIViewController {
     }
     
 
-   
-    // MARK: -
 
     
    

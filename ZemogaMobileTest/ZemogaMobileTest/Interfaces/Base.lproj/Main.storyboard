@@ -71,7 +71,7 @@
         <!--Post-->
         <scene sceneID="qJb-lb-Aia">
             <objects>
-                <viewController id="1I4-c4-0hX" sceneMemberID="viewController">
+                <viewController id="1I4-c4-0hX" customClass="PostInformationViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OhZ-ue-rhB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
