@@ -18,6 +18,8 @@
 		ED9411FE27AF5ED7005971DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FD27AF5ED7005971DA /* Post.swift */; };
 		ED94120027AF6016005971DA /* PostInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FF27AF6016005971DA /* PostInformation.swift */; };
 		ED94120227AF6675005971DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120127AF6675005971DA /* User.swift */; };
+		ED94120427B076D5005971DA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120327B076D5005971DA /* APIManager.swift */; };
+		ED94120627B08A41005971DA /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120527B08A41005971DA /* PostsListViewModel.swift */; };
 		EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */; };
 		EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */; };
 		EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E627ACA94F00DC9818 /* ViewController.swift */; };
@@ -66,6 +68,8 @@
 		ED9411FD27AF5ED7005971DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		ED9411FF27AF6016005971DA /* PostInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformation.swift; sourceTree = "<group>"; };
 		ED94120127AF6675005971DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ED94120327B076D5005971DA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		ED94120527B08A41005971DA /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		EDC6D1DF27ACA94F00DC9818 /* ZemogaMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZemogaMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		ED5A1F7427ACB38100A2A4AA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				ED94120527B08A41005971DA /* PostsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		ED5A1F7827ACB75D00A2A4AA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ED94120327B076D5005971DA /* APIManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED94120427B076D5005971DA /* APIManager.swift in Sources */,
 				ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */,
 				ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */,
 				ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */,
@@ -531,6 +538,7 @@
 				EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */,
 				ED9411FE27AF5ED7005971DA /* Post.swift in Sources */,
 				EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */,
+				ED94120627B08A41005971DA /* PostsListViewModel.swift in Sources */,
 				ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */,
 				ED94120227AF6675005971DA /* User.swift in Sources */,
 			);
