@@ -15,7 +15,7 @@ class RealmPost: Object{
     @Persisted var title: String = ""
     @Persisted var wasRead: Bool = false
     @Persisted var isFavorite: Bool = false
-    @Persisted var postInformation: RealmPostInfo = RealmPostInfo()
+    @Persisted var postInformation: RealmPostInfo! = RealmPostInfo()
     
     
     //Mark: - RealmPost Initializers
@@ -61,6 +61,8 @@ class RealmPostInfo: Object {
         self.user = user
         self.comments = comments
     }
+    
+    override init() {}
 }
 
 

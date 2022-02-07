@@ -25,4 +25,23 @@ class Post: Codable{
     }
     
     init(){}
+    
+    init(postReal: RealmPost) {
+        id = postReal.id
+        title = postReal.title
+        wasRead = postReal.wasRead
+        isFavorite = postReal.isFavorite
+       
+        
+        let postInfoObj = postReal.postInformation
+        let user = postReal.postInformation.user
+        postInformation = PostInformation(id: postReal.id,
+                                          description:postInfoObj?.fullDescription ?? "",
+                                          user: User(id: user?.id ?? 0, name: user?.name ?? "",
+                                                       phone: user?.phone ?? "",
+                                                       email: user?.email ?? "",
+                                                       webSite: user?.webSite ?? ""),
+                                          comments:postInfoObj?.comments.components(separatedBy: ",") ?? [""]
+                                            )
+    }
 }
