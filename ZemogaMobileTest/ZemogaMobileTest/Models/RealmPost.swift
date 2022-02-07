@@ -34,6 +34,7 @@ class RealmPost: Object{
         let allComments: String = post.postInformation.comments.joined(separator: ",")
         
         id = post.id
+        title = post.title
         wasRead = post.wasRead
         isFavorite = post.isFavorite
         postInformation = RealmPostInfo(fullDescription: post.postInformation.description,

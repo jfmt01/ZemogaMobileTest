@@ -16,8 +16,7 @@ class Post: Codable{
     var postInformation: PostInformation = PostInformation()
 
     //Mark: - Model Definition
-    init(id: Int, title: String, wasRead: Bool, isFavorite: Bool, postInformation: PostInformation){
-        self.id = id
+    init(title: String, wasRead: Bool, isFavorite: Bool, postInformation: PostInformation){
         self.title = title
         self.wasRead = wasRead
         self.isFavorite = isFavorite
