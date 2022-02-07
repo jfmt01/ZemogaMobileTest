@@ -27,7 +27,7 @@
                             <constraint firstAttribute="width" constant="14" id="QKi-aS-Ni4"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-37-ita">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-37-ita" userLabel="titleLabel">
                         <rect key="frame" x="56" y="11" width="472" height="97"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" name="postsListGrayLabel"/>
@@ -58,8 +58,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="cellTitle" destination="lQn-37-ita" id="U0i-Ko-YAg"/>
-                <outlet property="wasReadIcon" destination="zjV-R5-PPH" id="GFH-1T-pTh"/>
+                <outlet property="isFavoriteImage" destination="YLj-GG-oOw" id="UW8-fo-Yz6"/>
+                <outlet property="titleLabel" destination="lQn-37-ita" id="S75-Ox-Xya"/>
+                <outlet property="wasReadIconView" destination="zjV-R5-PPH" id="8t4-la-FZi"/>
             </connections>
             <point key="canvasLocation" x="-595.20000000000005" y="-452.02398800599701"/>
         </tableViewCell>

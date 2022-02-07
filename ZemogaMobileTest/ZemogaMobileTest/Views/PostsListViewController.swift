@@ -6,7 +6,9 @@
 //
 
 import UIKit
-import Combine
+import SwiftUI
+
+
 class PostsListViewController: UIViewController{
 
     //MARK: - UI Components reference
@@ -16,24 +18,61 @@ class PostsListViewController: UIViewController{
     private enum Constants{
         static let cellIdentifier: String = PostsListTableViewCell.reusableIdentifier
     }
-    var anyCancellable = Set<AnyCancellable>()
-    let viewModel = PostListViewModel()
     
-    public let refreshControl = UIRefreshControl()
+   
+
+    
+    var viewModel: PostsListViewModelProtocol?{
+        didSet{
+            loadViewIfNeeded()
+            //MARK: - Table data bind
+            viewModel?.modelPost.bind({[weak self] _ in
+                guard let self = self else {
+                      return
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+            
+            //MARK: - Cells data bind
+            viewModel?.postCellViewModel.bind({ [weak self] _ in
+                guard let self = self else {
+                      return
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+            
+
+            viewModel?.stopRefreshControl = {[weak self] in
+                guard let self = self else{
+                    return
+                }
+                self.refreshControl.endRefreshing()
+            }
+            
+        }
+    }
+    
+    let refreshControl = UIRefreshControl()
     let stopRefresh = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
-        configSegmentedControlAppearance()
+        
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
         tableViewConfig()
+        viewModel = PostsListViewModel()
+        viewModel?.viewModelDidLoad()
+        configSegmentedControlAppearance()
+        
         setNeedsStatusBarAppearanceUpdate()
-        fetchPosts()
-        
- 
-        
-        
-        // Do any additional setup after loading the view.
+    
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -47,11 +86,17 @@ class PostsListViewController: UIViewController{
     // MARK: - Private Functions
     
     //Table view configuration
-    func tableViewConfig(){
-        tableView.register(UINib(nibName: "PostsListTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsListTableViewCell")
+    private func tableViewConfig(){
+        
+        refreshControl.tintColor = UIColor.mainGreenColor()
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Posts Data...", attributes: nil)
+        self.tableView.register(UINib(nibName: "PostsListTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsListTableViewCell")
+                self.tableView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
-        CreateRefreshControl()
+        
+   
+        tableView.refreshControl = refreshControl
     }
     
     //Segmented control appeareance Function
@@ -71,62 +116,64 @@ class PostsListViewController: UIViewController{
     }
     
     //Refresh control to reload the table view data
-    public func CreateRefreshControl(){
-        tableView.refreshControl = refreshControl
-        refreshControl.tintColor = UIColor.mainGreenColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Posts")
-        refreshControl.addTarget(self, action: #selector(refreshPostList(_:)), for: .valueChanged)
-    }
     
     func configBackBtnNavBar(){
         self.navigationController?.navigationBar.tintColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem.appearance()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-  
-    @objc private func refreshPostList(_ sender: Any) {
-        // Fetch Weather Data
-        fetchPosts(fromRefresh: true)
+    
+    
+    //MARK: Refresh controller table view fetch data
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl){
+        viewModel?.getAllPosts()
     }
-    private func fetchPosts(fromRefresh: Bool = false){
-        viewModel.$posts
-            .receive(on: DispatchQueue.main)
-            .sink{[weak self] _ in
-                self?.tableView.reloadData()
-                if fromRefresh{
-                    self?.refreshControl.endRefreshing()
-                }
-            }
-            .store(in: &anyCancellable)
-        
-        
-      
+    
+    
+    //MARK: - Switch between all elements and only favorites
+    @IBAction func handlingSegmentedcontrolAction(_ sender: UISegmentedControl){
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            viewModel?.showFavoritesPost(onlyFavorites: true)
+        } else {
+            viewModel?.showFavoritesPost(onlyFavorites: false)
+        }
+    }
+    
+    
+    //MARK: - Delete all posts
+    @IBAction func touchUpDeleteAll(_ sender: Any) {
+        viewModel?.deleteAllPost()
     }
 }
 
 //Mark: - Tableview delegate
+
 extension PostsListViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //viewModel.selectedPost(post: viewModel.posts[indexPath.row])
-    }
+   
 }
 
 //Mark: - Table View Datasource
 extension PostsListViewController: UITableViewDataSource{
     //1 metodo: Numero de filas de la tabla
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(viewModel.posts.count)
-        return viewModel.posts.count
+        guard let viewModel = viewModel else {
+            return 0
+        }
+        
+        return viewModel.postCellViewModel.value.count
     }
     
-    //2 metodo: Para saber qué celdas se deben mostrar
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostsListTableViewCell", for: indexPath) as! PostsListTableViewCell
-        
-        cell.setupCell(with: viewModel.posts[indexPath.row])
-
-        
+        guard let viewModel = viewModel else {
+            return UITableViewCell()
+        }
+        let cell: PostsListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostsListTableViewCell", for: indexPath) as! PostsListTableViewCell
+        cell.viewModel = viewModel.postCellViewModel.value[indexPath.row]
         return cell
+        
     }
 }
+
 

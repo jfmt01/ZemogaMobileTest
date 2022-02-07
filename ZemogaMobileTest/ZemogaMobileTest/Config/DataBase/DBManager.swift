@@ -36,7 +36,7 @@ class DBManager{
         }
     }
     
-    func deletePostDB(post:[RealmPost]){
+    func deletePostDB(post: RealmPost){
         do{
             try realm.write{
                 realm.delete(post)

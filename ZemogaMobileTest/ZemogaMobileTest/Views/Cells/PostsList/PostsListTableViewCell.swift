@@ -6,36 +6,60 @@
 //
 
 import UIKit
+import SwiftUI
 
 class PostsListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellTitle: UILabel!
-    @IBOutlet weak var wasReadIcon: UIView!
-    static let  reusableIdentifier = "PostCell"
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var wasReadIconView: UIView!
+    @IBOutlet weak var isFavoriteImage: UIImageView!
+    static let  reusableIdentifier = "PostsListTableViewCell"
     
-    
- 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var viewModel: PostCellViewModel!{
+        didSet{
+            
+            //MARK: - Set cell text title
+            viewModel.title.bind {[weak self] title in
+                guard let self = self else {
+                    return
+                }
+                self.titleLabel.text = title
+                
+            }
+            
+            //MARK: - Post was read icon
+            viewModel.wasRead.bind { [weak self] wasRead in
+                guard let self = self else {
+                    return
+                }
+                self.configWasReadIcon()
+                self.wasReadIconView.isHidden = wasRead
+            }
+            
+            //MARK: - Post is favorite icon
+            viewModel.isFavorite.bind {  [weak self] isFavorite in
+                guard let self = self else {
+                    return
+                }
+                
+                if isFavorite{
+                    self.wasReadIconView.isHidden = isFavorite
+                }
+                
+                self.isFavoriteImage.isHidden = !isFavorite
+            }
+           
+        }
     }
+    
+  
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func configWasReadIcon(){
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func setupCell(with post: Post){
-        //print(title)
-//        print(post.title)
-//        let title: String = post.title
-//        print(title)
-        cellTitle.text = post.title
-        wasReadIcon.translatesAutoresizingMaskIntoConstraints = false
-        wasReadIcon.layer.cornerRadius = 7
-        //wasReadIcon.isHidden = true
-        
-        //wasReadIcon.layer.cornerRadius = wasReadIcon.frame.height/2
-    }
+        wasReadIconView.translatesAutoresizingMaskIntoConstraints = false
+        wasReadIconView.layer.cornerRadius = 7
+   }
 }
