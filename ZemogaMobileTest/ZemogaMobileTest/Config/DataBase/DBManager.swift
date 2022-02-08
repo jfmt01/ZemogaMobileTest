@@ -76,4 +76,5 @@ class DBManager{
             print("Realm ERROR - Adding post to favorites: \(error)")
         }
     }
+    
 }

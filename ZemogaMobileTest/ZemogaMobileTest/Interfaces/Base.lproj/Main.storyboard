@@ -186,6 +186,13 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="bxq-FW-57t" id="5nm-9h-bJ1"/>
+                        <outlet property="emailLabel" destination="haH-4x-ZNc" id="X5u-5n-QQs"/>
+                        <outlet property="userNameLabel" destination="CUp-eg-Ae5" id="OcF-dk-OfM"/>
+                        <outlet property="userPhoneLabel" destination="081-kc-BUl" id="hOP-XE-NkR"/>
+                        <outlet property="webSiteLabel" destination="FgB-2V-mKg" id="9iA-Pp-2bx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYY-4h-Rfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

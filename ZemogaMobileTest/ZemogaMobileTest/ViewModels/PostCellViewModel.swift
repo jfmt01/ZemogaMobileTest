@@ -18,10 +18,10 @@ protocol PostCellViewModelProtocol: AnyObject{
 }
 
 class PostCellViewModel: PostCellViewModelProtocol{
-   
+    
     var postCellModel: Observable<Post> = Observable(Post())
     
-    var title: Observable<String> = Observable("test")
+    var title: Observable<String> = Observable("")
     
     var wasRead: Observable<Bool> = Observable(false)
     
@@ -32,7 +32,6 @@ class PostCellViewModel: PostCellViewModelProtocol{
     var postInfoViewModel: Observable<PostInformationViewModel> = Observable(PostInformationViewModel(model: PostInformation()))
     
     init(model: Post, postInfoViewModel: PostInformationViewModel){
-        print(model)
         postCellModel.value = model
         title.value = model.title
         wasRead.value = model.wasRead

@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 class PostsListTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var wasReadIconView: UIView!
     @IBOutlet weak var isFavoriteImage: UIImageView!
@@ -48,18 +48,38 @@ class PostsListTableViewCell: UITableViewCell {
                 
                 self.isFavoriteImage.isHidden = !isFavorite
             }
-           
+            
         }
     }
     
-  
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.accessoryType = .disclosureIndicator
+        self.selectionStyle = .none
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            viewModel.wasRead.value = true
+        }
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
     func configWasReadIcon(){
-
+        
         wasReadIconView.translatesAutoresizingMaskIntoConstraints = false
         wasReadIconView.layer.cornerRadius = 7
-   }
+    }
 }

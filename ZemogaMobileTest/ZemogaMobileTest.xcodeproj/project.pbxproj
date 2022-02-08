@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		6B8B1A7D1A20F81364B18D18 /* Pods_ZemogaMobileTest_ZemogaMobileTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687BB4AE5E840CF817503CC /* Pods_ZemogaMobileTest_ZemogaMobileTestUITests.framework */; };
 		D08F2BE8EC8D844E4F9F2C92 /* Pods_ZemogaMobileTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E8BE0072D9379C904DC8C3 /* Pods_ZemogaMobileTestTests.framework */; };
+		ED01391A27B138AB0042B695 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01391927B138AB0042B695 /* Observable.swift */; };
+		ED01391C27B13B1F0042B695 /* PostInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01391B27B13B1F0042B695 /* PostInformationViewModel.swift */; };
+		ED01391E27B13F6E0042B695 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01391D27B13F6E0042B695 /* PostCellViewModel.swift */; };
+		ED01392427B142F70042B695 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01392227B142F70042B695 /* CommentsTableViewCell.swift */; };
+		ED01392527B142F70042B695 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED01392327B142F70042B695 /* CommentsTableViewCell.xib */; };
+		ED01392727B146D50042B695 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED01392627B146D50042B695 /* CommentCellViewModel.swift */; };
 		ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */; };
 		ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */; };
 		ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */; };
@@ -20,6 +26,8 @@
 		ED94120227AF6675005971DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120127AF6675005971DA /* User.swift */; };
 		ED94120427B076D5005971DA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120327B076D5005971DA /* APIManager.swift */; };
 		ED94120627B08A41005971DA /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120527B08A41005971DA /* PostsListViewModel.swift */; };
+		ED94120827B0C776005971DA /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120727B0C776005971DA /* DBManager.swift */; };
+		ED94120A27B0C827005971DA /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94120927B0C827005971DA /* RealmPost.swift */; };
 		EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */; };
 		EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */; };
 		EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6D1E627ACA94F00DC9818 /* ViewController.swift */; };
@@ -59,6 +67,12 @@
 		89E8BE0072D9379C904DC8C3 /* Pods_ZemogaMobileTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZemogaMobileTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B407363C218EF0F37442F77E /* Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig"; path = "Target Support Files/Pods-ZemogaMobileTest-ZemogaMobileTestUITests/Pods-ZemogaMobileTest-ZemogaMobileTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD8CE3D272FAF11F32DF6804 /* Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZemogaMobileTest-ZemogaMobileTestUITests/Pods-ZemogaMobileTest-ZemogaMobileTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED01391927B138AB0042B695 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		ED01391B27B13B1F0042B695 /* PostInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformationViewModel.swift; sourceTree = "<group>"; };
+		ED01391D27B13F6E0042B695 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		ED01392227B142F70042B695 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		ED01392327B142F70042B695 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		ED01392627B146D50042B695 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
 		ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
 		ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +84,8 @@
 		ED94120127AF6675005971DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ED94120327B076D5005971DA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		ED94120527B08A41005971DA /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
+		ED94120727B0C776005971DA /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		ED94120927B0C827005971DA /* RealmPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		EDC6D1DF27ACA94F00DC9818 /* ZemogaMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZemogaMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC6D1E227ACA94F00DC9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC6D1E427ACA94F00DC9818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,12 +152,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED01391F27B142A00042B695 /* CommentsList */ = {
+			isa = PBXGroup;
+			children = (
+				ED01392227B142F70042B695 /* CommentsTableViewCell.swift */,
+				ED01392327B142F70042B695 /* CommentsTableViewCell.xib */,
+			);
+			path = CommentsList;
+			sourceTree = "<group>";
+		};
 		ED5A1F7227ACB36300A2A4AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ED9411FD27AF5ED7005971DA /* Post.swift */,
 				ED9411FF27AF6016005971DA /* PostInformation.swift */,
 				ED94120127AF6675005971DA /* User.swift */,
+				ED94120927B0C827005971DA /* RealmPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				ED94120527B08A41005971DA /* PostsListViewModel.swift */,
+				ED01391B27B13B1F0042B695 /* PostInformationViewModel.swift */,
+				ED01391D27B13F6E0042B695 /* PostCellViewModel.swift */,
+				ED01392627B146D50042B695 /* CommentCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,6 +207,7 @@
 		ED5A1F7727ACB75000A2A4AA /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				ED94120727B0C776005971DA /* DBManager.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -212,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */,
+				ED01391927B138AB0042B695 /* Observable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +250,7 @@
 		ED5A1F8627AD434700A2A4AA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ED01391F27B142A00042B695 /* CommentsList */,
 				ED5A1F9527AD6DFA00A2A4AA /* PostsList */,
 			);
 			path = Cells;
@@ -401,6 +433,7 @@
 				EDC6D1EC27ACA95100DC9818 /* Assets.xcassets in Resources */,
 				ED5A1F9927AD6E1B00A2A4AA /* PostsListTableViewCell.xib in Resources */,
 				EDC6D1EA27ACA94F00DC9818 /* Main.storyboard in Resources */,
+				ED01392527B142F70042B695 /* CommentsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,19 +561,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED01392727B146D50042B695 /* CommentCellViewModel.swift in Sources */,
 				ED94120427B076D5005971DA /* APIManager.swift in Sources */,
 				ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */,
 				ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */,
+				ED01391A27B138AB0042B695 /* Observable.swift in Sources */,
 				ED5A1F7B27ACFED500A2A4AA /* PostsListViewController.swift in Sources */,
 				EDC6D1E727ACA94F00DC9818 /* ViewController.swift in Sources */,
+				ED94120A27B0C827005971DA /* RealmPost.swift in Sources */,
 				ED94120027AF6016005971DA /* PostInformation.swift in Sources */,
 				ED5A1F8127AD17C100A2A4AA /* UIColorExtension.swift in Sources */,
+				ED01392427B142F70042B695 /* CommentsTableViewCell.swift in Sources */,
 				EDC6D1E327ACA94F00DC9818 /* AppDelegate.swift in Sources */,
+				ED01391C27B13B1F0042B695 /* PostInformationViewModel.swift in Sources */,
 				ED9411FE27AF5ED7005971DA /* Post.swift in Sources */,
 				EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */,
 				ED94120627B08A41005971DA /* PostsListViewModel.swift in Sources */,
+				ED01391E27B13F6E0042B695 /* PostCellViewModel.swift in Sources */,
 				ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */,
 				ED94120227AF6675005971DA /* User.swift in Sources */,
+				ED94120827B0C776005971DA /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +768,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,7 +798,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

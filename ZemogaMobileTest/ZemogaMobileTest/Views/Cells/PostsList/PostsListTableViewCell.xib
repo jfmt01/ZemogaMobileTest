@@ -33,24 +33,18 @@
                         <color key="textColor" name="postsListGrayLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v57-Kb-y81">
-                        <rect key="frame" x="535.5" y="51.5" width="12.5" height="16.5"/>
-                        <color key="tintColor" systemColor="systemGray3Color"/>
-                    </imageView>
                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-GG-oOw">
                         <rect key="frame" x="22" y="49" width="22" height="20"/>
                         <color key="tintColor" systemColor="systemYellowColor"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="v57-Kb-y81" secondAttribute="trailing" constant="20" id="0T2-7M-4Xu"/>
                     <constraint firstItem="lQn-37-ita" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="4sH-21-ZOD"/>
                     <constraint firstItem="YLj-GG-oOw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="Dns-qr-BG4"/>
                     <constraint firstAttribute="bottomMargin" secondItem="lQn-37-ita" secondAttribute="bottom" id="QwD-Wf-nNp"/>
                     <constraint firstItem="YLj-GG-oOw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S1p-Ml-nKc"/>
-                    <constraint firstItem="v57-Kb-y81" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dfI-hb-QRL"/>
                     <constraint firstItem="zjV-R5-PPH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f2S-Yu-gav"/>
-                    <constraint firstAttribute="trailing" secondItem="lQn-37-ita" secondAttribute="trailing" constant="40" id="hD5-TM-7ev"/>
+                    <constraint firstItem="lQn-37-ita" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-40" id="hD5-TM-7ev"/>
                     <constraint firstItem="lQn-37-ita" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rGg-fv-stU"/>
                     <constraint firstItem="zjV-R5-PPH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="rHA-Vk-2YI"/>
                 </constraints>
@@ -66,16 +60,12 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="postsListGrayLabel">
             <color red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
