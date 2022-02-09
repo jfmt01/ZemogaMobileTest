@@ -19,9 +19,6 @@ class PostsListViewController: UIViewController{
         static let cellIdentifier: String = PostsListTableViewCell.reusableIdentifier
     }
     
-    
-    
-    
     var viewModel: PostsListViewModelProtocol?{
         didSet{
             loadViewIfNeeded()
@@ -99,11 +96,14 @@ class PostsListViewController: UIViewController{
     
     //Table view configuration
     private func tableViewConfig(){
-        view.backgroundColor = .grayBackground()
         tableView.backgroundColor = .none
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "PostsListTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsListTableViewCell")
+        
+        if self.traitCollection.userInterfaceStyle == .dark{
+            tableView.separatorColor = .grayBackground()
+        }
         
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor.mainGreenColor()
@@ -161,6 +161,7 @@ class PostsListViewController: UIViewController{
     //MARK: - Delete all posts
     @IBAction func touchUpDeleteAll(_ sender: UIButton) {
         viewModel?.deleteAllPost()
+        NotificationBanner.allDeletedBanner()
         
     }
     
@@ -217,6 +218,8 @@ extension PostsListViewController: UITableViewDelegate{
             viewModel.deleteIndividualPost(post: viewModel.modelPost.value[indexPath.row], index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
+            NotificationBanner.postDeletedBanner()
+           
             
         }
     }

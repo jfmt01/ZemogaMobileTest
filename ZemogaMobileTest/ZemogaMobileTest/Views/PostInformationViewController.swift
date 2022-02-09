@@ -72,10 +72,13 @@ class PostInformationViewController: UIViewController {
     }
     
     private func configTableView(){
-        view.backgroundColor = .grayBackground()
         commentsTableView.dataSource = self
         self.commentsTableView.register(UINib(nibName: "CommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsTableViewCell")
+        if self.traitCollection.userInterfaceStyle == .dark{
+            commentsTableView.separatorColor = .grayBackground()
+        }
     }
+    
     
     private func setViewData(){
         descriptionLabel.text = descriptionTxt
@@ -91,6 +94,7 @@ class PostInformationViewController: UIViewController {
 
 extension PostInformationViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(viewModel.commentsViewModel.value.count)
         return viewModel.commentsViewModel.value.count
     }
     
