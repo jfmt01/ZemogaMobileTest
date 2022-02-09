@@ -45,6 +45,8 @@ Pod install
 9) Scrolling from the right edge of each post you can delete them individually
 10) Finally you can refresh the posts by scrolling down from the top edge of the list
 
+NOTE: Dark mode and portrait view compatible.
+
 # Builth With 🛠⚙️⌨️
 
 ## Xcode : IDE
