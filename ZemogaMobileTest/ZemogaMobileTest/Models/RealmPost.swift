@@ -42,7 +42,8 @@ class RealmPost: Object{
                                                         phone: user?.phone ?? "",
                                                         email: user?.email ?? "",
                                                         webSite: user?.webSite ?? ""),
-                                        comments: allComments)
+                                        comments: allComments,
+                                        isFavInfo: post.postInformation.isFavInfo)
     }
 }
 
@@ -54,13 +55,15 @@ class RealmPostInfo: Object {
     @Persisted var fullDescription: String = ""
     @Persisted var user: RealmUser! = RealmUser()
     @Persisted var comments: String = ""
+    @Persisted var isFavInfo: Bool = false
     
     //Mark: - RealmPostInfo Initializers
     
-    init(fullDescription: String, user: RealmUser, comments: String){
+    init(fullDescription: String, user: RealmUser, comments: String, isFavInfo: Bool){
         self.fullDescription = fullDescription
         self.user = user
         self.comments = comments
+        self.isFavInfo = isFavInfo
     }
     
     override init() {}

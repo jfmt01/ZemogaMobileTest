@@ -180,8 +180,8 @@
 				ED5A1F8627AD434700A2A4AA /* Cells */,
 				EDC6D1E627ACA94F00DC9818 /* ViewController.swift */,
 				ED5A1F7A27ACFED500A2A4AA /* PostsListViewController.swift */,
-				ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */,
 				ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */,
+				ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -28,7 +28,7 @@ protocol PostsListViewModelProtocol{
     func showFavoritesPost(showFavs: Bool)
     func deleteAllPost()
     func deleteIndividualPost(post: Post, index: Int)
-    func checkPostAsFavorite(post: Post)
+    func checkPostAsFavorite(postInfo: PostInformation, segmentedIndex: Int)
     
     
     
@@ -69,7 +69,7 @@ class PostsListViewModel: PostsListViewModelProtocol{
             
         }
     }
-    //Sort posts by wasRead & isFavorite properties
+    //MARK: Sort posts by wasRead & isFavorite properties
     func postsSorted(posts: [Post]) -> [Post]{
         let sortedPosts = posts.sorted{!$0.wasRead && $1.wasRead}
         let newSortedPosts = sortedPosts.sorted{$0.isFavorite && !$1.isFavorite}
@@ -101,7 +101,7 @@ class PostsListViewModel: PostsListViewModelProtocol{
             }.store(in: &anyCancellable)
     }
     
-    // When a post list cell is selected
+    // Post list cell selected
     func postSelected(postViewModel: PostInformationViewModel, post: Post) {
         checkPostAsRead(post: post)
         goToPostInfoView?(postViewModel)
@@ -110,21 +110,17 @@ class PostsListViewModel: PostsListViewModelProtocol{
         postInfoData?(postInfo)
     }
     
-    // Show all the favorites post only
+    // MARK: - Show all the favorites post only
     func showFavoritesPost(showFavs: Bool) {
-        var temporalPost: [Post] = []
-        
         switch showFavs{
         case true:
-            temporalPost = modelPost.value.filter { post in post.isFavorite}
+            populateFromFavsDb()
         default:
-            temporalPost = modelPost.value
+            populateViewModelFromDB()
         }
-        
-        postCellViewModel.value = temporalPost.compactMap { PostCellViewModel(model: $0, postInfoViewModel: PostInformationViewModel(model: $0.postInformation)) }
     }
     
-    // Delete all post from DB
+    //MARK: - Delete all post from DB
     func deleteAllPost() {
         modelPost.value.removeAll()
         postCellViewModel.value.removeAll()
@@ -132,7 +128,7 @@ class PostsListViewModel: PostsListViewModelProtocol{
         DBManager.shared.deleteAllDB(posts: realmPost)
     }
     
-    // Delete individual post
+    // MARK: -  Delete individual post
     func deleteIndividualPost(post: Post, index: Int) {
         let realmPost = DBManager.shared.fetchPostsDB()
         if let deletePost = realmPost.filter({$0.id == post.id}).first{
@@ -144,30 +140,48 @@ class PostsListViewModel: PostsListViewModelProtocol{
         }
     }
     
-    //Mark a post as favorite
-    func checkPostAsFavorite(post: Post) {
+    //MARK: - Mark a post as favorite
+    func checkPostAsFavorite(postInfo: PostInformation, segmentedIndex: Int) {
         let realmPost = DBManager.shared.fetchPostsDB()
-        if let updatePost = realmPost.filter({$0.id == post.id}).first{
-            DBManager.shared.addPostToFavoritesDB(post: updatePost, isFavorite: post.isFavorite)
+        if let updatePost = realmPost.filter({$0.id == postInfo.id}).first{
+            DBManager.shared.addPostToFavoritesDB(post: updatePost, isFavorite: postInfo.isFavInfo)
+        }
+        if segmentedIndex == 0{
+            populateViewModelFromDB()
+        }else if segmentedIndex == 1{
+            populateFromFavsDb()
         }
     }
     
-    // Mark a post as read
+    //MARK: - Mark a post as read
     
     func checkPostAsRead(post: Post){
         let realmPost = DBManager.shared.fetchPostsDB()
         if let updatePost = realmPost.filter({$0.id == post.id}).first{
             DBManager.shared.checkPostAsReadDB(post: updatePost)
         }
+        if UserDefaults.standard.integer(forKey: "segmentSelected") == 1{
+            populateFromFavsDb()
+        }
+        else
+        {
+            populateViewModelFromDB()
+        }
     }
-    
+    //MARK: - Get posts list from realm DB
     func populateViewModelFromDB() {
         let postsRealm = DBManager.shared.fetchPostsDB()
         let posts = postsRealm.map { Post(postReal: $0) }
         configModel(model: posts)
     }
+    //MARK: - Get favorites list from realm DB
+    func populateFromFavsDb(){
+        let postFavsRealm = DBManager.shared.fetchFavsDB()
+        let posts = postFavsRealm.map{Post(postReal: $0)}
+        configModel(model: posts)
+    }
     
-    
+    //MARK: - Save posts in realm db
     func storagePosts(model: [RealmPost]) {
         DispatchQueue.main.async {
             let realmPost = DBManager.shared.fetchPostsDB()
@@ -184,9 +198,9 @@ class PostsListViewModel: PostsListViewModelProtocol{
             guard let self = self else {
                 return
             }
-            
-            self.modelPost.value = model
-            self.postCellViewModel.value = model.compactMap { PostCellViewModel(model: $0, postInfoViewModel: PostInformationViewModel(model: $0.postInformation)) }
+            let newModel = self.postsSorted(posts: model)
+            self.modelPost.value = newModel
+            self.postCellViewModel.value = newModel.compactMap { PostCellViewModel(model: $0, postInfoViewModel: PostInformationViewModel(model: $0.postInformation)) }
         }
     }
     

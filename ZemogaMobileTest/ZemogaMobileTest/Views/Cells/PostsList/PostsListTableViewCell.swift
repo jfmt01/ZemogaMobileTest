@@ -49,6 +49,7 @@ class PostsListTableViewCell: UITableViewCell {
                 self.isFavoriteImage.isHidden = !isFavorite
             }
             
+            
         }
     }
     

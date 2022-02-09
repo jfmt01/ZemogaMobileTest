@@ -13,13 +13,15 @@ class PostInformation: Codable{
     var description: String = ""
     var user: User!
     var comments: [String] = []
+    var isFavInfo: Bool = false
     
     //Mark: - Intializers
-    init(id: Int, description: String, user: User, comments: [String]){
+    init(id: Int, description: String, user: User, comments: [String], isFavInfo: Bool){
         self.id = id
         self.description = description
         self.user = user
         self.comments = comments
+        self.isFavInfo = isFavInfo
     }
     
     init(){}

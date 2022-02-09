@@ -27,8 +27,8 @@ class APIManager{
     
     func getApiPostsList() -> AnyPublisher<[Post], Error>{
         
-        let fullUrl = URL(string: Constants.mainUrl+Constants.endpointRoute)!
-        print(fullUrl)
+        let fullUrl = URL(string: "https://my-json-server.typicode.com/jfmt01/ZemogaJSONDB/posts")!
+ 
         return Future{[weak self] promise in
             guard let self = self else{return}
             

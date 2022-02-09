@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 //Mark: - Model Definition
 class Post: Codable{
@@ -40,7 +41,8 @@ class Post: Codable{
                                                      phone: user?.phone ?? "",
                                                      email: user?.email ?? "",
                                                      webSite: user?.webSite ?? ""),
-                                          comments:postInfoObj?.comments.components(separatedBy: ",") ?? [""]
+                                          comments:postInfoObj?.comments.components(separatedBy: ",") ?? [""],
+                                          isFavInfo: postInfoObj?.isFavInfo ?? false
         )
     }
 }

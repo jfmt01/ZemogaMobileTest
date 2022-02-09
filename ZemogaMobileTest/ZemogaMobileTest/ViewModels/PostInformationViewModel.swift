@@ -14,6 +14,7 @@ protocol PostInformationViewModelProtocol: AnyObject{
     var modelPost: Observable<PostInformation>{get set}
     var commentsViewModel: Observable<[CommentCellViewModel]>{get}
     var starPostInformation: ((PostInformation) -> ())? {get set}
+    
 }
 
 class PostInformationViewModel: PostInformationViewModelProtocol{

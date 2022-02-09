@@ -67,10 +67,25 @@ class DBManager{
         return[RealmPost]()
     }
     
+    func fetchFavsDB () -> [RealmPost]{
+        do{
+            let realm = try Realm()
+            let realmArray = realm.objects(RealmPost.self).where{
+                $0.isFavorite == true
+            }
+            return Array(realmArray)
+        }catch let error as NSError{
+            print("Realm ERROR - Updating a post: \(error)")
+        }
+        
+        return [RealmPost]()
+    }
+    
     func addPostToFavoritesDB(post: RealmPost, isFavorite: Bool){
         do {
             try realm.write {
                 post.isFavorite = isFavorite
+                post.postInformation.isFavInfo = isFavorite
             }
         } catch let error as NSError {
             print("Realm ERROR - Adding post to favorites: \(error)")

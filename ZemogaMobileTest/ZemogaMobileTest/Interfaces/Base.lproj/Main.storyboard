@@ -118,13 +118,13 @@
                                                 <color key="textColor" name="postsListGrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haH-4x-ZNc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="081-kc-BUl">
                                                 <rect key="frame" x="0.0" y="22" width="335" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" name="postsListGrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="081-kc-BUl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haH-4x-ZNc">
                                                 <rect key="frame" x="0.0" y="44" width="335" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" name="postsListGrayLabel"/>
@@ -182,20 +182,12 @@
                             <constraint firstItem="a0J-IJ-nCn" firstAttribute="top" secondItem="USy-D2-vrH" secondAttribute="bottom" constant="20" id="ubN-cn-0is"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="dPp-96-uEH">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="tTh-4P-kx4" userLabel="Favorite Icon">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="touchInFavIcon:" destination="1I4-c4-0hX" id="oLu-gN-Sgc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Post" id="dPp-96-uEH"/>
                     <connections>
                         <outlet property="commentsTableView" destination="H3V-iK-fGq" id="yUz-Mg-1Yj"/>
                         <outlet property="descriptionLabel" destination="bxq-FW-57t" id="5nm-9h-bJ1"/>
                         <outlet property="descriptionTitle" destination="yPk-G2-Wl4" id="cAP-nV-J5n"/>
                         <outlet property="emailLabel" destination="haH-4x-ZNc" id="X5u-5n-QQs"/>
-                        <outlet property="favoriteButton" destination="tTh-4P-kx4" id="fa7-M8-pZy"/>
                         <outlet property="userNameLabel" destination="CUp-eg-Ae5" id="OcF-dk-OfM"/>
                         <outlet property="userPhoneLabel" destination="081-kc-BUl" id="hOP-XE-NkR"/>
                         <outlet property="userTitle" destination="7A9-fA-h5I" id="TJM-uw-BI1"/>
@@ -225,7 +217,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="DeleteButtonColor">
             <color red="0.81568627450980391" green="0.0039215686274509803" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
