@@ -59,11 +59,6 @@ class PostsListViewController: UIViewController{
                     return
                 }
                 DispatchQueue.main.async {
-                    //let postInfoVC = PostInformationViewController()
-                    
-                    //self.performSegue(withIdentifier: "OpenPostInfo", sender: nil)
-                    //self.present(vc, animated: true)
-                    //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let postInfoVC = self.storyboard?
                         .instantiateViewController(withIdentifier: "PostInformation") as! PostInformationViewController
                     
@@ -104,6 +99,8 @@ class PostsListViewController: UIViewController{
     
     //Table view configuration
     private func tableViewConfig(){
+        view.backgroundColor = .grayBackground()
+        tableView.backgroundColor = .none
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "PostsListTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsListTableViewCell")

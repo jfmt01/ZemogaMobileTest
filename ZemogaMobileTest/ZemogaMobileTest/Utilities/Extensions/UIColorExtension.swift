@@ -17,8 +17,8 @@ public extension UIColor {
         UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
     }
     
-    static func favoriteIconColor() -> UIColor{
-        UIColor(red: 248/255, green: 231/255, blue: 29/255, alpha: 1.0)
+    static func grayBackground() -> UIColor{
+        UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1.0)
     }
     
     static func deleteButtonColor() -> UIColor{

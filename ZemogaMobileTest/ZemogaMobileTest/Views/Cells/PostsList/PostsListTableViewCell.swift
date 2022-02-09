@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftUI
+
 
 class PostsListTableViewCell: UITableViewCell {
     
@@ -66,13 +66,6 @@ class PostsListTableViewCell: UITableViewCell {
         }
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
     override func prepareForReuse() {
         super.prepareForReuse()
     }
