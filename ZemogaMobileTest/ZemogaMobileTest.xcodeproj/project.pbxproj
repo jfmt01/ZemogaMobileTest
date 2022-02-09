@@ -20,6 +20,7 @@
 		ED5A1F8327AD268F00A2A4AA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */; };
 		ED5A1F9827AD6E1B00A2A4AA /* PostsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */; };
 		ED5A1F9927AD6E1B00A2A4AA /* PostsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */; };
+		ED6A962B27B38B9B00135312 /* NotificationBannerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A962A27B38B9B00135312 /* NotificationBannerExtension.swift */; };
 		ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */; };
 		ED9411FE27AF5ED7005971DA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FD27AF5ED7005971DA /* Post.swift */; };
 		ED94120027AF6016005971DA /* PostInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9411FF27AF6016005971DA /* PostInformation.swift */; };
@@ -78,6 +79,7 @@
 		ED5A1F8227AD268F00A2A4AA /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		ED5A1F9627AD6E1B00A2A4AA /* PostsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListTableViewCell.swift; sourceTree = "<group>"; };
 		ED5A1F9727AD6E1B00A2A4AA /* PostsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsListTableViewCell.xib; sourceTree = "<group>"; };
+		ED6A962A27B38B9B00135312 /* NotificationBannerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerExtension.swift; sourceTree = "<group>"; };
 		ED70B7BF27AF238200388C54 /* PostInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformationViewController.swift; sourceTree = "<group>"; };
 		ED9411FD27AF5ED7005971DA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		ED9411FF27AF6016005971DA /* PostInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformation.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				ED5A1F8027AD17C100A2A4AA /* UIColorExtension.swift */,
 				ED01391927B138AB0042B695 /* Observable.swift */,
+				ED6A962A27B38B9B00135312 /* NotificationBannerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				ED01391C27B13B1F0042B695 /* PostInformationViewModel.swift in Sources */,
 				ED9411FE27AF5ED7005971DA /* Post.swift in Sources */,
 				EDC6D1E527ACA94F00DC9818 /* SceneDelegate.swift in Sources */,
+				ED6A962B27B38B9B00135312 /* NotificationBannerExtension.swift in Sources */,
 				ED94120627B08A41005971DA /* PostsListViewModel.swift in Sources */,
 				ED01391E27B13F6E0042B695 /* PostCellViewModel.swift in Sources */,
 				ED70B7C027AF238200388C54 /* PostInformationViewController.swift in Sources */,
@@ -687,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -742,7 +746,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -778,7 +782,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -808,7 +812,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

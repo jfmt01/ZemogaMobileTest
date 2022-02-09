@@ -9,13 +9,30 @@ import Foundation
 import NotificationBannerSwift
 
 public extension NotificationBanner{
-    static func allDeleteBanner() -> NotificationBanner{
-        let banner = NotificationBanner(title: "⚠️ All Posts Were Deleted", style: .danger)
-        return banner
+    
+    static func addedToFavBanner() {
+        let banner = NotificationBanner(title: "⭐️ Post Was Added To Favorites", style: .success)
+        banner.show()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            banner.dismiss()
+        }
     }
     
-    static func addedToFavBanner() -> NotificationBanner{
-        let banner = NotificationBanner(title: "", style: .success)
-        return banner
+    static func postDeletedBanner() {
+        let banner = NotificationBanner(title: "❕ One Post Was Deleted", style: .warning)
+        banner.show()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            banner.dismiss()
+        }
     }
+    
+    static func allDeletedBanner() {
+        let banner = NotificationBanner(title: "⚠️ All Posts Were Deleted", style: .danger)
+        banner.show()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            banner.dismiss()
+        }
+    }
+    
+   
 }
