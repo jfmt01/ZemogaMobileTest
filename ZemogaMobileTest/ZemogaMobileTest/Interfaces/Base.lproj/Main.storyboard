@@ -81,7 +81,8 @@
         <!--Post-->
         <scene sceneID="qJb-lb-Aia">
             <objects>
-                <viewController id="1I4-c4-0hX" customClass="PostInformationViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYY-4h-Rfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PostInformation" definesPresentationContext="YES" id="1I4-c4-0hX" customClass="PostInformationViewController" customModule="ZemogaMobileTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OhZ-ue-rhB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +90,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="USy-D2-vrH">
                                 <rect key="frame" x="20" y="10" width="335" height="260.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPk-G2-Wl4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPk-G2-Wl4" userLabel="descriptionTitle">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -166,7 +167,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Toa-wo-4FW"/>
-                        <color key="backgroundColor" name="grayBackground"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="USy-D2-vrH" firstAttribute="top" secondItem="Toa-wo-4FW" secondAttribute="top" constant="10" id="2qE-UH-8hI"/>
                             <constraint firstItem="H3V-iK-fGq" firstAttribute="top" secondItem="a0J-IJ-nCn" secondAttribute="bottom" id="8VJ-of-r4a"/>
@@ -182,19 +183,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="dPp-96-uEH">
-                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="tTh-4P-kx4" userLabel="Favorite Icon">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="tTh-4P-kx4" userLabel="Favorite Icon">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="touchInFavIcon:" destination="1I4-c4-0hX" id="oLu-gN-Sgc"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentsTableView" destination="H3V-iK-fGq" id="5DH-eB-IZL"/>
                         <outlet property="descriptionLabel" destination="bxq-FW-57t" id="5nm-9h-bJ1"/>
+                        <outlet property="descriptionTitle" destination="yPk-G2-Wl4" id="cAP-nV-J5n"/>
                         <outlet property="emailLabel" destination="haH-4x-ZNc" id="X5u-5n-QQs"/>
+                        <outlet property="favoriteButton" destination="tTh-4P-kx4" id="fa7-M8-pZy"/>
                         <outlet property="userNameLabel" destination="CUp-eg-Ae5" id="OcF-dk-OfM"/>
                         <outlet property="userPhoneLabel" destination="081-kc-BUl" id="hOP-XE-NkR"/>
+                        <outlet property="userTitle" destination="7A9-fA-h5I" id="TJM-uw-BI1"/>
                         <outlet property="webSiteLabel" destination="FgB-2V-mKg" id="9iA-Pp-2bx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DYY-4h-Rfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918.840579710145" y="46.875"/>
         </scene>
@@ -221,9 +228,6 @@
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="DeleteButtonColor">
             <color red="0.81568627450980391" green="0.0039215686274509803" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="grayBackground">
-            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import NotificationBannerSwift
 
 
 class PostsListViewController: UIViewController{
@@ -47,13 +47,31 @@ class PostsListViewController: UIViewController{
                 }
             })
             
-            
             viewModel?.stopRefreshControl = {[weak self] in
                 guard let self = self else{
                     return
                 }
                 self.refreshControl.endRefreshing()
             }
+            
+            viewModel?.goToPostInfoView = {[weak self] viewModel in
+                guard let self = self else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    //let postInfoVC = PostInformationViewController()
+                    
+                    //self.performSegue(withIdentifier: "OpenPostInfo", sender: nil)
+                    //self.present(vc, animated: true)
+                    //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let postInfoVC = self.storyboard?
+                        .instantiateViewController(withIdentifier: "PostInformation") as! PostInformationViewController
+                    
+                    postInfoVC.viewModel = viewModel
+                    self.navigationController?.pushViewController(postInfoVC, animated: true)
+                }
+            }
+            
         }
     }
     
@@ -63,8 +81,6 @@ class PostsListViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         tableViewConfig()
         viewModel = PostsListViewModel()
         viewModel?.viewModelDidLoad()
@@ -73,6 +89,8 @@ class PostsListViewController: UIViewController{
         setNeedsStatusBarAppearanceUpdate()
         
     }
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         configBackBtnNavBar()
@@ -142,13 +160,14 @@ class PostsListViewController: UIViewController{
     }
     
     
+    
     //MARK: - Delete all posts
-    @IBAction func touchUpDeleteAll(_ sender: Any) {
+    @IBAction func touchUpDeleteAll(_ sender: UIButton) {
         viewModel?.deleteAllPost()
+        
     }
+    
 }
-
-//Mark: - Tableview delegate
 
 //Mark: - Table View Datasource
 extension PostsListViewController: UITableViewDataSource{
@@ -170,11 +189,9 @@ extension PostsListViewController: UITableViewDataSource{
         
         return viewModel.postCellViewModel.value.count
     }
-    
-    
-    
 }
 
+//Mark: - Tableview delegate
 extension PostsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -203,6 +220,7 @@ extension PostsListViewController: UITableViewDelegate{
             viewModel.deleteIndividualPost(post: viewModel.modelPost.value[indexPath.row], index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
+            
         }
     }
     

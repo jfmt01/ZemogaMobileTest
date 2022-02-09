@@ -8,7 +8,6 @@ target 'ZemogaMobileTest' do
   # Pods for ZemogaMobileTest
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'RealmSwift'
-  pod 'LoadingShimmer'
 
   target 'ZemogaMobileTestTests' do
     inherit! :search_paths
