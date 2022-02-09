@@ -21,7 +21,7 @@ Following you will find instructions to get a copy of the project and run it on 
 1) Download or clone the project from the next link:
 [Github Repository](https://github.com/jfmt01/ZemogaMobileTest)
 
-2) Once downloaded, open a terminal in the project route were is the "Podfile"
+2) Once downloaded, open a terminal in the project route where is the "Podfile"
 
 3) Execute the next command:
 ```
