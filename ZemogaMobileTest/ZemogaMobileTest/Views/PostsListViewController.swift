@@ -101,9 +101,9 @@ class PostsListViewController: UIViewController{
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "PostsListTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsListTableViewCell")
         
-        if self.traitCollection.userInterfaceStyle == .dark{
-            tableView.separatorColor = .grayBackground()
-        }
+//        if self.traitCollection.userInterfaceStyle == .dark{
+//            tableView.separatorColor = .grayBackground()
+//        }
         
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
         refreshControl.tintColor = UIColor.mainGreenColor()
@@ -191,6 +191,9 @@ extension PostsListViewController: UITableViewDataSource{
 
 //Mark: - Tableview delegate
 extension PostsListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let viewModel = viewModel{

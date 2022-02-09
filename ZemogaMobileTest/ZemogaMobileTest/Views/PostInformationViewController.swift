@@ -70,15 +70,15 @@ class PostInformationViewController: UIViewController {
         
         delegate?.infoViewDidUpfate(post: viewModel as! PostInformationViewModel)
     }
-    
+    //MARK: - Config UITableView
     private func configTableView(){
         commentsTableView.dataSource = self
+        commentsTableView.delegate = self
         self.commentsTableView.register(UINib(nibName: "CommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsTableViewCell")
         if self.traitCollection.userInterfaceStyle == .dark{
             commentsTableView.separatorColor = .grayBackground()
         }
     }
-    
     
     private func setViewData(){
         descriptionLabel.text = descriptionTxt
@@ -105,6 +105,11 @@ extension PostInformationViewController: UITableViewDataSource{
         newCell.viewModel = viewModel.commentsViewModel.value[indexPath.row]
         return newCell
     }
-    
+}
+
+extension PostInformationViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
 }
 
